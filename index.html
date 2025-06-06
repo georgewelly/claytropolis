@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ category: 'all' }">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mum's Art Portfolio</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js for interactivity -->
+  <script src="https://unpkg.com/alpinejs" defer></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Header / Navbar -->
+  <header class="shadow-md">
+    <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Mum's Art</h1>
+      <ul class="flex space-x-6 items-center">
+        <li><button @click="category = 'all'" class="hover:text-blue-600">All</button></li>
+        <li><button @click="category = 'london'" class="hover:text-blue-600">London</button></li>
+        <li><button @click="category = 'bowls'" class="hover:text-blue-600">Bowls</button></li>
+        <li><button @click="category = 'graffiti'" class="hover:text-blue-600">Graffiti</button></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-16">
+    <h2 class="text-4xl font-bold mb-4">Welcome to Mum's Art</h2>
+    <p class="text-lg text-gray-600">A personal collection of artwork from cityscapes to ceramics</p>
+  </section>
+
+  <!-- Gallery -->
+  <section class="max-w-6xl mx-auto px-4 py-8 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+    
+    <!-- Bowls -->
+    <div x-show="category === 'all' || category === 'bowls'" class="overflow-hidden rounded shadow hover:shadow-lg transition">
+      <img src="assets/images/bowls/IMG_6366.jpeg" alt="Bowl" class="w-full h-auto">
+    </div>
+
+    <!-- Graffiti -->
+    <div x-show="category === 'all' || category === 'graffiti'" class="overflow-hidden rounded shadow hover:shadow-lg transition">
+      <img src="assets/images/graffiti/IMG_6354.jpeg" alt="Graffiti" class="w-full h-auto">
+    </div>
+
+    <!-- London -->
+    <div x-show="category === 'all' || category === 'london'" class="overflow-hidden rounded shadow hover:shadow-lg transition">
+      <img src="assets/images/london/IMG_6317.jpeg" alt="London Piece 1" class="w-full h-auto">
+    </div>
+
+    <div x-show="category === 'all' || category === 'london'" class="overflow-hidden rounded shadow hover:shadow-lg transition">
+      <img src="assets/images/london/IMG_6344.jpeg" alt="London Piece 2" class="w-full h-auto">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-50 py-16">
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-2xl font-semibold mb-4">Get in Touch</h3>
+      <p class="text-gray-600 mb-6">For commissions or inquiries, reach out via the links below.</p>
+      <div class="flex justify-center space-x-6">
+        <a href="mailto:yourmum@example.com" class="text-blue-600 hover:underline">Email</a>
+        <a href="#" class="text-blue-600 hover:underline">Instagram</a>
+        <a href="#" class="text-blue-600 hover:underline">Pinterest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center text-sm text-gray-500">
+      <p>&copy; 2025 Mum's Art</p>
+      <p>Made with 💙 by her child</p>
+    </div>
+  </footer>
+
+</body>
+</html>
